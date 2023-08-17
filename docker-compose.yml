@@ -6,6 +6,11 @@ services:
     environment:
       ACCEPT_EULA: Y
       MSSQL_SA_PASSWORD: ms_admin_123
+    volumes:
+      - ms_sql_data:/var/opt/mssql
     ports:
       - "1433:1433"
     restart: unless-stopped
+
+volumes:
+  ms_sql_data:
