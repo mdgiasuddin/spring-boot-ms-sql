@@ -2,7 +2,7 @@ server:
   port: 8150
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=master;encrypt=true;trustServerCertificate=true
+    url: jdbc:sqlserver://localhost:1433;databaseName=test_db;encrypt=true;trustServerCertificate=true
     username: sa
     password: ms_admin_123
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
