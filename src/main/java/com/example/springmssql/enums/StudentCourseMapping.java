@@ -1,6 +1,7 @@
-package com.example.springmssql.entity;
+package com.example.springmssql.enums;
 
-
+import com.example.springmssql.entity.Course;
+import com.example.springmssql.entity.Student;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,27 +13,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
-
 @Entity
-@Table(name = "person")
+@Table(name = "student_course_mapping")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Person {
+public class StudentCourseMapping {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String name;
+    private Integer id;
 
     @ManyToOne
-    private Country country;
+    private Student student;
 
-    private LocalDate dob;
-    private LocalDateTime dobTime;
-    private ZonedDateTime dobZoned;
+    @ManyToOne
+    private Course course;
 }

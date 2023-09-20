@@ -3,8 +3,11 @@ package com.example.springmssql.controller;
 
 import com.example.springmssql.dto.PersonRequest;
 import com.example.springmssql.entity.Person;
+import com.example.springmssql.entity.Student;
 import com.example.springmssql.service.PersonService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +31,12 @@ public class PersonController {
 
     @GetMapping
     public List<Person> getAllPerson() {
+
         return personService.getAllPerson();
+    }
+
+    @GetMapping("/student")
+    public List<Student> getAllStudent() {
+        return personService.getAllStudent();
     }
 }
